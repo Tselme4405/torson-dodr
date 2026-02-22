@@ -5,6 +5,19 @@
   --foreground: #171717;
 }
 
+/* Font class-ууд (next/font/google variable-уудаа ашиглана) */
+.font-delius {
+  font-family: var(--font-delius), cursive;
+}
+
+.font-playfair {
+  font-family: var(--font-playfair), serif;
+}
+
+.font-dancing {
+  font-family: var(--font-dancing);
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -22,5 +35,83 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+/* ===== Floating blobs background ===== */
+/* ===== Floating blobs background ===== */
+.blob-wrap {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+.blink {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+.blob {
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  left: var(--x);
+  top: var(--y);
+
+  /* Heart SVG (data URL) */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 29'%3E%3Cpath fill='rgba(60,60,60,0.75)' d='M23.6 0c-3 0-5.6 1.8-7.6 4.3C14 1.8 11.4 0 8.4 0 3.7 0 0 3.8 0 8.6c0 9.5 16 20.4 16 20.4S32 18.1 32 8.6C32 3.8 28.3 0 23.6 0z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  opacity: 0.55;
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.12));
+
+  animation-name: floatY, driftX;
+  animation-duration: var(--t1), var(--t2);
+  animation-timing-function: ease-in-out, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+  animation-delay: var(--d1), var(--d2);
+}
+
+@keyframes floatY {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-4deg);
+  }
+  50% {
+    transform: translateY(-26px) rotate(6deg);
+  }
+}
+
+@keyframes driftX {
+  0%,
+  100% {
+    margin-left: 0;
+  }
+  50% {
+    margin-left: 34px;
+  }
+}
+.fade-letter {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.fade-letter.visible {
+  opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .blob {
+    animation: none !important;
+  }
 }
