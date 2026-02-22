@@ -22,11 +22,11 @@ export default function LetterEnvelope() {
               : "-top-10 opacity-0 translate-y-6 pointer-events-none",
           ].join(" ")}
         >
-          <p className="text-gray-700 text-base sm:text-lg mb-3 leading-relaxed">
-            Inged 18 hurleedee 18 nasaa goy enjoy hiigeerei
+          <p className="font-title text-3xl sm:text-4xl text-pink-500">
+            18 nasaa goy enjoy hiij ongoruulerei
           </p>
-          <p className="text-gray-700 text-base sm:text-lg mb-6 leading-relaxed">
-            10:40 surguuliin 5 davhart ireerei
+          <p className="text-gray-700 text-base sm:text-lg mb-6 leading-relaxed font-body text-lg text-gray-700">
+            10 tsag 40 min surguuliin 5 davhart ireerei
           </p>
 
           <button
