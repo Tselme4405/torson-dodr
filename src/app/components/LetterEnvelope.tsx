@@ -23,8 +23,7 @@ export default function LetterEnvelope() {
           ].join(" ")}
         >
           <p className="text-gray-700 text-base sm:text-lg mb-3 leading-relaxed">
-            Inged 18 hurleedee margaash 18 nasniihan ehnii odriin goy bailgahiig
-            hicheene
+            Inged 18 hurleedee 18 nasaa goy enjoy hiigeerei
           </p>
           <p className="text-gray-700 text-base sm:text-lg mb-6 leading-relaxed">
             10:40 surguuliin 5 davhart ireerei
